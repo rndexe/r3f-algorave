@@ -32,14 +32,14 @@ export default function App() {
   return (
     <Canvas>
       <AudioProvider>
-      <Stats />
+      {/* <Stats /> */}
       {/* <Perf/> */}
         <ambientLight intensity={Math.PI / 2} />
         <directionalLight position={[2.5, 8, 5]} intensity={2} />
 
-        <SceneCube />
+        {/* <SceneCube /> */}
         <MovingGrid/>
-         {/* <WavyCube change={1}/> */}
+         <WavyCube change={1}/>
          {/* <WavyCylinder change={1} /> */}
         {/* <AnimatedTube /> */}
         {/* <Shapes color={colors[1]}/> */}
@@ -48,7 +48,7 @@ export default function App() {
         {/* <Clouds count={100} /> */}
           {/* <Portal /> */}
          {/* <Track /> */}
-        <StarCloud/>
+        {/* <StarCloud/> */}
          {/* <Galaxy change={1}/> */}
             {/* <MovingCamera /> */} 
          <OrbitControls /> 
@@ -70,10 +70,6 @@ function Efx() {
            {/* /> */} 
 
           <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={0.9} height={300} />
-           <Glitch active mode={GlitchMode.SPORADIC} delay={[1.5, 3.5]}
-           duration={[0.6, 1.0]} 
-           strength={[0.3, 1.0]} 
-           ratio={0.85} /> 
         </EffectComposer>
    
   )
@@ -469,8 +465,8 @@ function WavyCube({change}) {
   useFrame(({ clock }, delta) => {
     if (mref.current) {
       mref.current.time += delta;
-      // mref.current.amplitude = amplitude * 0.03;
-      mref.current.frequency = amplitude * 0.03;
+      mref.current.amplitude = 0.8;
+      mref.current.frequency = 2;
        // mref.current.offsetGain = low * 0.03;
        // mref.current.offsetSize = low * 0.03;
        //mref.current.size = low * 3;
